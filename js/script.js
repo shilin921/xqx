@@ -76,7 +76,7 @@ const mainStage = new Stage("main-canvas");
 const stages = [trailsStage, mainStage];
 
 //随机文字烟花内容
-const randomWords = ["桃子", "心想事成", "永远开心快乐", "桃子", "慢慢长大"];
+const randomWords = ["小朋友，新年快乐！", "愿你的心中四季如春", "慢慢长大，永远开心快乐", "愿你的世界永远五彩斑斓，充满爱与温暖", "祝你得偿所愿"];
 const wordDotsMap = {};
 randomWords.forEach((word) => {
 	wordDotsMap[word] = MyMath.literalLattice(word, 3, "Gabriola,华文琥珀", "90px");
@@ -1905,7 +1905,7 @@ class Shell {
 					Math.random() * 2 * Math.PI,
 					// apply near cubic falloff to speed (places more particles towards outside)
 					Math.pow(Math.random(), 0.15) * 1.4,
-					this.starLife + Math.random() * this.starLife * this.starLifeVariation + 1000
+					1.5 * this.starLife + Math.random() * this.starLife * this.starLifeVariation + 1000
 				);
 			}
 
@@ -1978,7 +1978,7 @@ class Shell {
 		}
 
 		if (!this.disableWordd && store.state.config.wordShell) {
-			if (Math.random() < 0.1) {
+			if (Math.random() < 0.3) {
 				if (Math.random() < 0.5) {
 					createWordBurst(randomWord(), dotStarFactory, x, y);
 				}
